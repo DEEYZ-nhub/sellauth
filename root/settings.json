@@ -3,23 +3,70 @@
         "shop": {
             "layout": "master",
             "components": {
+                "hero": {
+                    "type": "hero",
+                    "properties": {
+                        "title": "Discover Your Style",
+                        "subtitle": "Premium quality products curated just for you",
+                        "show_searchbar": true,
+                        "buttons": [
+                            {
+                                "text": "Shop Now",
+                                "icon": "fas fa-arrow-right",
+                                "link": "\/products",
+                                "new_tab": false,
+                                "style": "regular"
+                            }
+                        ],
+                        "alignment": "center",
+                        "height": "medium",
+                        "text_width": "medium",
+                        "side_image": null
+                    }
+                },
                 "products": {
                     "type": "products",
                     "properties": {
-                        "title": null,
+                        "title": "Featured Products",
                         "show_searchbar": false,
                         "ids": [],
-                        "centered": true
+                        "centered": false
                     }
                 },
-                "stats": {
+                "features": {
+                    "type": "features",
                     "properties": {
-                        "title": null
+                        "title": "Why Shop With Us",
+                        "features": [
+                            {
+                                "title": "Fast Delivery",
+                                "description": "Get your orders delivered quickly with our express shipping options.",
+                                "icon": "fas fa-shipping-fast"
+                            },
+                            {
+                                "title": "Secure Payments",
+                                "description": "Shop with confidence using our encrypted payment gateway.",
+                                "icon": "fas fa-lock"
+                            },
+                            {
+                                "title": "Quality Products",
+                                "description": "All products are carefully selected and quality tested.",
+                                "icon": "fas fa-star"
+                            },
+                            {
+                                "title": "24/7 Support",
+                                "description": "Our customer service team is always here to help you.",
+                                "icon": "fas fa-headset"
+                            }
+                        ],
+                        "centered": false
                     }
                 }
             },
             "components_order": [
-                "products"
+                "hero",
+                "products",
+                "features"
             ]
         },
         "cart": {
@@ -199,18 +246,18 @@
     },
     "global": {
         "properties": {
-            "accent_color": "#ef1d00",
-            "background_color": "#10100d",
-            "card_color": "#28282e",
-            "text_primary_color": "#ffffff",
+            "accent_color": "#000000",
+            "background_color": "#ffffff",
+            "card_color": "#f8f8f8",
+            "text_primary_color": "#000000",
             "text_accent_color": "#ffffff",
-            "font": "Play",
+            "font": "Inter",
             "snow": false,
             "snow_color": "#ffffff",
-            "product_card_image_aspect_ratio": "16\/9",
-            "product_page_image_aspect_ratio": "16\/9",
+            "product_card_image_aspect_ratio": "1\/1",
+            "product_page_image_aspect_ratio": "4\/3",
             "product_image_fit": "cover",
-            "group_card_image_aspect_ratio": "16\/9",
+            "group_card_image_aspect_ratio": "1\/1",
             "group_image_fit": "cover",
             "blog_card_image_aspect_ratio": "16\/9",
             "blog_image_fit": "cover"
@@ -219,17 +266,17 @@
             "announcement": {
                 "announcements": [
                     {
-                        "text": "\ud83d\udca5 New Products Available Now!",
+                        "text": "Free Shipping on Orders Over $50",
                         "link": null,
                         "new_tab": false
                     },
                     {
-                        "text": "\ud83d\udd25 Check Our Limited Time Offers!",
-                        "link": null,
+                        "text": "New Arrivals - Shop the Latest Collection",
+                        "link": "\/products",
                         "new_tab": false
                     },
                     {
-                        "text": "\u231b What Are You Waiting For? Purchase Now!",
+                        "text": "Limited Time: 15% Off Your First Order",
                         "link": null,
                         "new_tab": false
                     }
@@ -240,12 +287,17 @@
                 "show_logo": true,
                 "links": [
                     {
-                        "text": "Home",
-                        "link": "\/",
+                        "text": "Shop",
+                        "link": "\/products",
                         "shape": "regular"
                     },
                     {
-                        "text": "Products",
+                        "text": "New",
+                        "link": "\/products",
+                        "shape": "regular"
+                    },
+                    {
+                        "text": "Sale",
                         "link": "\/products",
                         "shape": "regular"
                     },
@@ -263,20 +315,20 @@
                 "show_shop_name": true,
                 "show_logo": false,
                 "show_socials": true,
-                "copyright": "Copyright \u00a9 {{ shop.name }} {{ '' | currentYear }}",
+                "copyright": "Copyright \u00a9 {{ shop.name }} {{ '' | currentYear }}. All rights reserved.",
                 "links": [
                     {
-                        "text": "Terms of Service",
+                        "text": "Terms",
                         "link": "\/terms-of-service",
                         "new_tab": false
                     },
                     {
-                        "text": "Privacy Policy",
+                        "text": "Privacy",
                         "link": "\/privacy-policy",
                         "new_tab": false
                     },
                     {
-                        "text": "Refund Policy",
+                        "text": "Returns",
                         "link": "\/refund-policy",
                         "new_tab": false
                     }

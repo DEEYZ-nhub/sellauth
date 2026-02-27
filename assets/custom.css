@@ -1,4 +1,257 @@
 /*
- * Enter any custom CSS here.
- * This file will not be overwritten by theme updates.
+ * Minimalist E-commerce Design - Custom Styles
 */
+
+/* Global Overrides */
+body {
+    letter-spacing: -0.01em;
+}
+
+/* Remove particles background */
+#particles-js {
+    display: none !important;
+}
+
+/* Announcement Bar Styling */
+.announcement {
+    background: #000000 !important;
+    border: none !important;
+}
+
+.announcement .p-2 {
+    background: #000000 !important;
+    border: none !important;
+}
+
+/* Navbar Minimal Styling */
+nav.component {
+    background: rgba(255, 255, 255, 0.98) !important;
+    border: none !important;
+    border-bottom: 1px solid #e5e5e5 !important;
+    backdrop-filter: blur(10px);
+}
+
+/* Footer Minimal */
+footer {
+    background: #ffffff !important;
+    border: none !important;
+    border-top: 1px solid #e5e5e5 !important;
+}
+
+/* Product Cards */
+.product-card-minimal {
+    background: #ffffff !important;
+    border: 1px solid #e5e5e5 !important;
+    transition: all 0.3s ease;
+}
+
+.product-card-minimal:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    border-color: #000000 !important;
+}
+
+/* Buttons */
+button, .button, a.button {
+    transition: all 0.2s ease;
+    letter-spacing: 0.02em;
+}
+
+/* Hero Section */
+.hero-minimal {
+    background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+}
+
+/* Clean spacing */
+.component {
+    border: none !important;
+}
+
+/* Input fields */
+input, select, textarea {
+    border-radius: 0 !important;
+    border: 1px solid #e5e5e5 !important;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #000000 !important;
+    box-shadow: none !important;
+}
+
+/* Cards */
+.bg-card {
+    background: #ffffff !important;
+    border: 1px solid #e5e5e5 !important;
+}
+
+.bg-card\/75 {
+    background: #ffffff !important;
+    border: 1px solid #e5e5e5 !important;
+}
+
+/* Remove backgrounds */
+.bg-background\/35 {
+    background: #f8f8f8 !important;
+}
+
+/* Accent colors */
+.text-accent-500 {
+    color: #000000 !important;
+}
+
+.bg-accent-500 {
+    background: #000000 !important;
+}
+
+.border-accent-500 {
+    border-color: #000000 !important;
+}
+
+/* Hover states */
+.hover\:bg-accent-500:hover {
+    background: #000000 !important;
+}
+
+.hover\:text-accent-500:hover {
+    color: #000000 !important;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+/* Clean borders */
+.border-white\/5 {
+    border-color: #e5e5e5 !important;
+}
+
+/* Status indicators */
+.pulsating {
+    animation: none !important;
+}
+
+/* Feature cards */
+.features .bg-card\/75 {
+    background: #ffffff !important;
+    border: 1px solid #e5e5e5 !important;
+    transition: all 0.3s ease;
+}
+
+.features .bg-card\/75:hover {
+    border-color: #000000 !important;
+}
+
+/* Price styling */
+.price-tag {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+/* Minimal scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f8f8f8;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d0d0d0;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a0a0a0;
+}
+
+/* Product grid improvements */
+.product-grid-minimal {
+    gap: 1.5rem;
+}
+
+/* Cart improvements */
+.cart-item {
+    background: #ffffff;
+    border: 1px solid #e5e5e5 !important;
+}
+
+/* Modal improvements */
+.modal-backdrop {
+    backdrop-filter: blur(4px);
+}
+
+/* Badge styling */
+.badge-minimal {
+    background: #000000 !important;
+    color: #ffffff !important;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    font-weight: 500;
+}
+
+/* Image containers */
+.image-container {
+    background: #f8f8f8;
+    overflow: hidden;
+}
+
+/* Search bar */
+.search-minimal {
+    background: #f8f8f8 !important;
+    border: 1px solid #e5e5e5 !important;
+}
+
+.search-minimal:focus-within {
+    border-color: #000000 !important;
+    background: #ffffff !important;
+}
+
+/* Stats section */
+.stats-minimal {
+    background: #f8f8f8;
+    border: none !important;
+}
+
+/* Text adjustments */
+.text-t-primary {
+    color: #000000 !important;
+}
+
+.text-t-primary\/80 {
+    color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.text-t-primary\/75 {
+    color: rgba(0, 0, 0, 0.75) !important;
+}
+
+.text-t-primary\/60 {
+    color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.text-t-primary\/50 {
+    color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.text-t-primary\/40 {
+    color: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Clean transitions */
+* {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Remove all rounded corners for true minimalism */
+* {
+    border-radius: 0 !important;
+}
+
+/* Exception for circular elements */
+.rounded-full {
+    border-radius: 9999px !important;
+}
