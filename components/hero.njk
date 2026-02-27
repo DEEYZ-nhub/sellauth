@@ -15,9 +15,9 @@
 {% set hcClass = heroAlignClassMap[properties.alignment] %}
 
 {% set textWidthClassMap = {
-  'small': 'max-w-md',
-  'medium': 'max-w-xl',
-  'large': 'max-w-3xl',
+  'small': 'max-w-lg',
+  'medium': 'max-w-2xl',
+  'large': 'max-w-4xl',
   'full': ''
 } %}
 
@@ -46,16 +46,16 @@
 {% set imageClass = imageAlignClassMap[properties.alignment] %}
 
 <section id="{{ componentId }}" class="component" data-component-id="{{ componentId }}">
-  <div class="relative flex justify-center items-center py-24 {{ containerHeightClass }}">
+  <div class="relative flex justify-center items-center py-20 lg:py-32 {{ containerHeightClass }}">
     <div class="container relative flex gap-12 items-center px-4 {{ hcClass }}">
-      <div class="flex flex-col gap-4 {{ textClass }}">
+      <div class="flex flex-col gap-6 {{ textClass }}">
         {% if properties.title %}
-          <h1 class="text-3xl font-bold text-t-primary mb-3 md:text-4xl lg:text-5xl">
+          <h1 class="text-4xl font-bold text-t-primary tracking-tight leading-[1.1] md:text-5xl lg:text-6xl text-balance">
             {{ properties.title | renderString }}
           </h1>
         {% endif %}
         {% if properties.subtitle %}
-          <p class="text-base text-t-primary/75 mb-3 md:text-lg">
+          <p class="text-base text-t-primary/40 leading-relaxed md:text-lg lg:text-xl max-w-2xl {{ 'mx-auto' if properties.alignment == 'center' }}">
             {{ properties.subtitle | renderString }}
           </p>
         {% endif %}
@@ -63,14 +63,14 @@
           {% render_snippet "searchbar.njk", alignment=properties.alignment %}
         {% endif %}
         {% if properties.buttons and properties.buttons.length > 0 %}
-          <div class="flex flex-wrap items-center gap-4 mt-3 {{ buttonClass }}">
+          <div class="flex flex-wrap items-center gap-4 mt-2 {{ buttonClass }}">
             {% render_snippet "buttons.njk", buttons=properties.buttons %}
           </div>
         {% endif %}
       </div>
       {% if properties.side_image %}
         <div class="flex items-center min-w-md {{ imageClass }}">
-          <img src="{{ properties.side_image | imageUrl }}" alt="" class="max-w-full" />
+          <img src="{{ properties.side_image | imageUrl }}" alt="" class="max-w-full rounded-2xl" />
         </div>
       {% endif %}
     </div>

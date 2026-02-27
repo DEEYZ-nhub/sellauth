@@ -4,32 +4,34 @@
 {% endif %}
 
 <section id="{{ componentId }}" class="component" data-component-id="{{ componentId }}">
-  <div class="py-6 lg:py-8">
+  <div class="py-12 lg:py-16">
     {% if properties.title %}
-      <div class="flex items-center justify-center mb-4 md:mb-6 lg:mb-8">
-        <div class="inline-block">
-          <h1 class="text-t-primary text-2xl text-center font-bold md:text-3xl lg:text-4xl">
+      <div class="flex items-center justify-center mb-8 md:mb-12">
+        <div class="inline-block text-center">
+          <h2 class="text-t-primary text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl text-balance">
             {{ properties.title | renderString }}
-          </h1>
-          <hr class="w-full border-accent-500 mt-1 md:border-2 md:mt-1.5 lg:mt-2 mx-auto">
+          </h2>
+          <div class="w-12 h-0.5 bg-accent-500 mt-4 mx-auto rounded-full"></div>
         </div>
       </div>
     {% endif %}
   
     <div class="{{ containerClass }}">
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-3">
         {% for item in properties.items %}
-          <div class="bg-card/75 border border-white/5 text-t-primary relative p-4 md:p-6" x-data="{ isOpen: false }">
-            <button class="w-full flex justify-between items-center" @click="isOpen = !isOpen">
-              <h4 class="text-left text-base font-semibold md:text-lg">
+          <div class="bg-white/[0.02] border border-white/[0.06] rounded-xl text-t-primary relative p-5 md:p-6 transition-all duration-300 hover:bg-white/[0.04]" x-data="{ isOpen: false }">
+            <button class="w-full flex justify-between items-center gap-4" @click="isOpen = !isOpen">
+              <h4 class="text-left text-sm font-semibold md:text-base">
                 {{ item.question | renderString }}
               </h4>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-accent-500 size-6 hover:scale-110 transition-transform ease-in-out duration-150" :class="{ 'rotate-180': isOpen }">
-                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-              </svg>
+              <div class="flex-shrink-0 size-8 flex items-center justify-center rounded-lg bg-white/[0.04] transition-all duration-300" :class="{ 'bg-accent-500/10': isOpen }">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4 text-t-primary/40 transition-all duration-300" :class="{ 'rotate-180 !text-accent-500': isOpen }">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+              </div>
             </button>
-            <div x-ref="content" :style="isOpen ? `max-height: ${$refs.content.scrollHeight}px` : ''" class="overflow-hidden transition-all ease-in-out duration-150 max-h-0">
-              <p class="pt-2 text-sm text-t-primary/80 md:text-base">
+            <div x-ref="content" :style="isOpen ? `max-height: ${$refs.content.scrollHeight}px` : ''" class="overflow-hidden transition-all ease-in-out duration-300 max-h-0">
+              <p class="pt-4 text-sm text-t-primary/40 leading-relaxed md:text-base">
                 <span class="whitespace-pre-line">{{ item.answer | renderString }}</span>
               </p>
             </div>

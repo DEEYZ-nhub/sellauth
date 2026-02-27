@@ -6,14 +6,14 @@
 {% endif %}
 
 <section id="{{ componentId }}" class="component" data-component-id="{{ componentId }}">
-  <div class="py-6 lg:py-8">
+  <div class="py-12 lg:py-16">
     {% if properties.title %}
-      <div class="flex items-center justify-center mb-4 md:mb-6 lg:mb-8">
-        <div class="inline-block">
-          <h1 class="text-t-primary text-2xl text-center font-bold md:text-3xl lg:text-4xl">
+      <div class="flex items-center justify-center mb-8 md:mb-12">
+        <div class="inline-block text-center">
+          <h2 class="text-t-primary text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl text-balance">
             {{ properties.title | renderString }}
-          </h1>
-          <hr class="w-full border-accent-500 mt-1 md:border-2 md:mt-1.5 lg:mt-2 mx-auto">
+          </h2>
+          <div class="w-12 h-0.5 bg-accent-500 mt-4 mx-auto rounded-full"></div>
         </div>
       </div>
     {% endif %}
@@ -21,7 +21,7 @@
     {% if templateName == 'feedback' and feedbacks|length > 0 %}
       <div class="flex my-4 md:my-6 md:justify-end">
         <div class="flex flex-col gap-2 md:flex-row md:items-center md:gap-4 md:min-w-lg">
-          <div class="text-sm text-t-primary/80">
+          <div class="text-sm text-t-primary/40">
             Sort Reviews By
           </div>
           <div class="min-w-72">
@@ -56,14 +56,14 @@
       {% if feedbacks_paginator.last_page > 1 %}
         {% render_snippet "pagination.njk", paginator=feedbacks_paginator %}
       {% elif data|length >= properties.amount %}
-        <div class="flex justify-center mt-8">
-          <a href="{{ '/feedback' | shopUrl }}" class="text-accent-500 hover:underline">
+        <div class="flex justify-center mt-10">
+          <a href="{{ '/feedback' | shopUrl }}" class="text-sm text-accent-500 hover:text-accent-400 transition-colors duration-200">
             View All Reviews
           </a>
         </div>
       {% endif %}
     {% else %}
-      <div class="text-t-primary/50">
+      <div class="text-center text-t-primary/30 py-12">
         {% if templateName == 'product' %}
           No reviews about this product yet.
         {% else %}

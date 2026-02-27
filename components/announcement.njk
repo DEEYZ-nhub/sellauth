@@ -1,5 +1,5 @@
 <div class="announcement component {{ '' if (global.components.announcement.announcements.length > 0) else 'hidden' }}" data-component-id="announcement">
-  <div class="p-2 text-t-accent text-sm text-center bg-accent-500 border border-accent-600">
+  <div class="py-2.5 px-4 text-t-primary text-xs tracking-wide text-center bg-white/[0.03] border-b border-white/[0.06]">
     <div
       x-data="{
         duration: 3000,
@@ -12,13 +12,13 @@
         }
       }"
       x-init="startInterval"
-      class="overflow-hidden h-5"
+      class="overflow-hidden h-4"
     >
       {% for announcement in global.components.announcement.announcements %}
         <p
           x-show="activeIndex === {{ loop.index0 }}"
           {{ 'x-cloak' if not loop.first }}
-          class="font-medium text-center animate-announcement-fade truncate line-clamp-1"
+          class="font-medium text-center animate-announcement-fade truncate line-clamp-1 text-t-primary/70"
         >
           {% render_snippet "announcement-item.njk", announcement=announcement %}
         </p>

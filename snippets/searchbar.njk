@@ -27,10 +27,12 @@
       document.body.style.overflow = 'auto';
     }
   }">
-  <div class="bg-card/75 border border-white/5">
-    <div class="flex items-center gap-4 max-w-xl text-t-primary/80 text-sm p-3 cursor-pointer transform transition-colors duration-150 ease-in-out hover:bg-white/[0.025] focus-within:ring-2 focus-within:ring-accent-500 {{ alignClass }}" @click="openModal">
-      <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="currentColor" d="m29 27.586l-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9a9.01 9.01 0 0 1-9-9"/></svg>
-      <input type="text" class="bg-transparent cursor-pointer focus:outline-none" placeholder="Search for products..." readonly />
+  <div class="bg-white/[0.02] border border-white/[0.06] rounded-xl overflow-hidden">
+    <div class="flex items-center gap-4 max-w-xl text-t-primary/30 text-sm p-3.5 cursor-pointer transition-all duration-200 hover:bg-white/[0.02] focus-within:ring-2 focus-within:ring-accent-500/30 {{ alignClass }}" @click="openModal">
+      <svg class="size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+      </svg>
+      <input type="text" class="bg-transparent cursor-pointer focus:outline-none placeholder:text-t-primary/30" placeholder="Search for products..." readonly />
     </div>
   </div>
 
@@ -43,7 +45,7 @@
         x-transition:leave="transition ease-in duration-200 transform"
         x-transition:leave-start="opacity-100" 
         x-transition:leave-end="opacity-0"
-        class="fixed inset-0 transition-opacity bg-black/75" aria-hidden="true"
+        class="fixed inset-0 transition-opacity bg-black/60 backdrop-blur-sm" aria-hidden="true"
       ></div>
 
       <div x-cloak x-show="isModalOpen" 
@@ -55,14 +57,16 @@
         x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
         class="inline-block w-full max-w-[76rem] transition-all transform"
       >
-        <div class="overflow-hidden text-t-primary text-left border border-white/5 bg-background p-4 md:p-6">
-          <div class="flex items-center justify-between gap-4 mb-4 sm:mb-6">
-            <div class="flex-1 flex items-center gap-4 bg-white/[0.025] border border-white/5 text-t-primary/80 text-sm p-3 focus-within:ring-2 focus-within:ring-accent-500 {{ alignClass }}">
-              <svg class="size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="currentColor" d="m29 27.586l-7.552-7.552a11.018 11.018 0 1 0-1.414 1.414L27.586 29ZM4 13a9 9 0 1 1 9 9a9.01 9.01 0 0 1-9-9"/></svg>
-              <input type="text" class="bg-transparent focus:outline-none" placeholder="Search for products..." x-ref="searchInput" x-model="searchTerm">
+        <div class="overflow-hidden text-t-primary text-left border border-white/[0.06] rounded-2xl bg-background p-6 md:p-8">
+          <div class="flex items-center justify-between gap-4 mb-6">
+            <div class="flex-1 flex items-center gap-4 bg-white/[0.02] border border-white/[0.06] rounded-xl text-t-primary/40 text-sm p-3.5 focus-within:border-accent-500/50 transition-colors duration-200 {{ alignClass }}">
+              <svg class="size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+              </svg>
+              <input type="text" class="bg-transparent text-t-primary focus:outline-none placeholder:text-t-primary/30" placeholder="Search for products..." x-ref="searchInput" x-model="searchTerm">
             </div>
 
-            <button @click="closeModal" class="flex items-center justify-center size-[2.875rem] bg-white/[0.025] border border-white/5 text-t-primary/75 transition-colors ease-in-out duration-150 focus:outline-none hover:text-accent-500 hover:bg-accent-500/10">
+            <button @click="closeModal" class="flex items-center justify-center size-11 bg-white/[0.04] rounded-xl text-t-primary/40 transition-all duration-200 focus:outline-none hover:text-t-primary hover:bg-white/[0.08]">
               <svg class="size-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
               </svg>
